@@ -5,4 +5,4 @@ then
   ip route add local $PREFIX dev lo
 fi
 
-exec matrix-appservice-irc $@
+exec /usr/local/bin/node app.js -c /config/irc-config.yaml -f /config/registration_file.yaml -p 9999:9999 -p 1113:1113

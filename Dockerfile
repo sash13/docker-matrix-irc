@@ -22,9 +22,9 @@ WORKDIR /usr/local/lib/node_modules/matrix-appservice-irc
 # ldpreload
 ENV LD_PRELOAD /usr/local/lib/node_modules/matrix-appservice-irc/libfreebindfree.so
 
-# start script
 COPY start.sh /start.sh
 
-VOLUME /config/
+VOLUME /config/data/
 
+RUN ["chmod", "+x", "/start.sh"]
 ENTRYPOINT [  "/start.sh" ]

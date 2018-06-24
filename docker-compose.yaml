@@ -1,0 +1,15 @@
+version: "2"
+services:
+  appservice-irc:
+    image: matrix-appservice-irc
+    restart: always
+    ports:
+     - "9999:9999"
+     - "1113:1113"
+    volumes:
+     - /path/to/folder/with/config:/config
+
+networks:
+  default:
+    external:
+      name: matrix-network
